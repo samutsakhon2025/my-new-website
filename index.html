@@ -4,93 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esports World Cup</title>
-    <!-- Link to Google Fonts for a modern look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Link to our CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Hero Section with Video Background -->
+    <!-- =========== Header / Navigation Bar =========== -->
+    <header id="main-header" class="site-header">
+        <div class="container">
+            <a href="#" class="site-logo">EWC</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">GAMES</a></li>
+                    <li><a href="#">SCHEDULE</a></li>
+                    <li><a href="#">TICKETS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =========== Hero Section with Video Background =========== -->
     <section class="hero-section">
-        
-        <!-- The Video -->
         <video autoplay loop muted playsinline class="hero-video-bg">
-            <!-- ชื่อไฟล์วิดีโอของคุณคือ background-video.mp4 -->
             <source src="background-video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-
-        <!-- The Content Overlay -->
         <div class="hero-content">
             <h1 class="hero-title">THE ESPORTS WORLD CUP</h1>
             <p class="hero-subtitle">JULY 3 - AUGUST 25, 2024 | RIYADH</p>
             <a href="#" class="hero-button">BUY TICKETS</a>
         </div>
-
-    </section><!-- ================================== -->
-<!--  เนื้อหาเว็บไซต์ส่วนที่เหลือ (Main Content) -->
-<!-- ================================== -->
-<main class="site-content">
-
-    <!-- About Us Section -->
-    <section id="about" class="content-section">
-        <div class="container">
-            <h2 class="section-title">ABOUT THE EVENT</h2>
-            <p class="section-subtitle">
-                The Esports World Cup is a multi-game, global esports festival held in Riyadh, Saudi Arabia. 
-                It's where the best clubs in the world compete across multiple game titles for the ultimate prize.
-            </p>
-        </div>
     </section>
 
-    <!-- Our Games Section -->
-    <section id="games" class="content-section bg-dark">
+    <!-- =========== Footer =========== -->
+    <footer class="site-footer">
         <div class="container">
-            <h2 class="section-title">FEATURED GAMES</h2>
-            <div class="game-grid">
-                
-                <!-- Game Card 1 -->
-                <div class="game-card">
-                    <img src="https://via.placeholder.com/400x500/111/fff?text=League+of+Legends" alt="League of Legends">
-                    <div class="game-card-overlay">
-                        <h3>League of Legends</h3>
-                    </div>
-                </div>
-
-                <!-- Game Card 2 -->
-                <div class="game-card">
-                    <img src="https://via.placeholder.com/400x500/111/fff?text=Counter-Strike+2" alt="Counter-Strike 2">
-                    <div class="game-card-overlay">
-                        <h3>Counter-Strike 2</h3>
-                    </div>
-                </div>
-
-                <!-- Game Card 3 -->
-                <div class="game-card">
-                    <img src="https://via.placeholder.com/400x500/111/fff?text=Dota+2" alt="Dota 2">
-                    <div class="game-card-overlay">
-                        <h3>Dota 2</h3>
-                    </div>
-                </div>
-
-                 <!-- Game Card 4 -->
-                 <div class="game-card">
-                    <img src="https://via.placeholder.com/400x500/111/fff?text=Valorant" alt="Valorant">
-                    <div class="game-card-overlay">
-                        <h3>Valorant</h3>
-                    </div>
-                </div>
-
-            </div>
+            <p>© 2024 Esports World Cup. All Rights Reserved.</p>
+            <p>Created by Your Name</p>
         </div>
-    </section>
+    </footer>
 
-</main>
-
-    <!-- Link to our JavaScript file -->
     <script src="script.js"></script>
 
 </body>
