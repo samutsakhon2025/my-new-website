@@ -1,151 +1,106 @@
-/* --- Global Styles & Variables --- */
-:root {
-    --primary-color: #007bff; /* สีหลักของเว็บ (สีน้ำเงิน) */
-    --secondary-color: #f8f9fa; /* สีพื้นหลังรอง (สีเทาอ่อน) */
-    --text-color: #333; /* สีตัวอักษรหลัก */
-    --light-text-color: #fdfdfd; /* สีตัวอักษรบนพื้นหลังเข้ม */
-    --border-radius: 8px; /* ความโค้งของขอบ */
-}
-
-body {
-    font-family: 'Sarabun', sans-serif; /* ใช้ฟอนต์ Sarabun จาก Google Fonts */
-    margin: 0;
-    line-height: 1.6;
-    background-color: #ffffff;
-    color: var(--text-color);
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* --- Header & Navigation --- */
-.site-header {
-    background-color: var(--secondary-color);
-    padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.site-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.site-title {
-    margin: 0;
-    font-size: 1.8rem;
-    color: var(--primary-color);
-}
-
-.site-nav ul {
+/* --- Basic Setup --- */
+body, html {
     margin: 0;
     padding: 0;
-    list-style: none;
-    display: flex;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    overflow-x: hidden; /* Prevents horizontal scrollbar */
 }
 
-.site-nav li {
-    margin-left: 20px;
-}
-
-.site-nav a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 700;
-    transition: color 0.3s ease;
-}
-
-.site-nav a:hover {
-    color: var(--primary-color);
-}
-
-/* --- Main Content --- */
-.site-main {
-    padding: 40px 0;
-}
-
+/* --- Hero Section Styling --- */
 .hero-section {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: var(--secondary-color);
-    border-radius: var(--border-radius);
-    margin-bottom: 40px;
-}
-
-.hero-section h2 {
-    font-size: 2.5rem;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.cta-button {
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    border: none;
-    padding: 12px 25px;
-    font-size: 1rem;
-    font-weight: 700;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #0056b3; /* สีหลักเข้มขึ้น */
-}
-
-/* --- Features Section --- */
-.features-section {
+    height: 100vh; /* ทำให้ section สูงเต็มหน้าจอ */
+    width: 100vw; /* ทำให้ section กว้างเต็มหน้าจอ */
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    gap: 30px; /* ระยะห่างระหว่างกล่อง */
-}
-
-.feature-item {
-    background-color: #fff;
-    border: 1px solid #eee;
-    padding: 25px;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    flex-basis: 30%; /* กำหนดความกว้างพื้นฐานของแต่ละกล่อง */
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    color: #fff;
+    overflow: hidden; /* ซ่อนส่วนเกินของวิดีโอ */
 }
 
-.feature-item h3 {
-    margin-top: 0;
-    color: var(--primary-color);
+/* The dark overlay on top of the video */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* สีดำโปร่งแสง 50% */
+    z-index: 1; /* อยู่เหนือวิดีโอ */
 }
 
-/* --- Footer --- */
-.site-footer {
-    background-color: #333;
-    color: var(--light-text-color);
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+/* --- Video Background Styling --- */
+.hero-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ทำให้วิดีโอเต็มพื้นที่โดยไม่เสียสัดส่วน */
+    transform: translate(-50%, -50%);
+    z-index: 0; /* อยู่หลังสุด */
+}
+
+/* --- Content Styling --- */
+.hero-content {
+    position: relative; /* หรือ z-index: 2; */
+    z-index: 2; /* ทำให้เนื้อหาอยู่เหนือ Overlay */
+    padding: 20px;
+    /* Effect for fade-in animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-out, transform 1s ease-out;
+}
+
+/* Class to be added by JavaScript to trigger the animation */
+.hero-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.hero-title {
+    font-family: 'Teko', sans-serif;
+    font-size: 6rem; /* ขนาดตัวอักษรใหญ่ */
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0.5rem 0 2rem 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero-button {
+    background-color: #007bff; /* สีปุ่มตัวอย่าง */
+    color: #fff;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 2px solid #007bff;
+}
+
+.hero-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 /* --- Responsive for Mobile --- */
 @media (max-width: 768px) {
-    .site-header .container, .features-section {
-        flex-direction: column; /* เปลี่ยนการจัดวางเป็นแนวตั้ง */
-        text-align: center;
+    .hero-title {
+        font-size: 3.5rem;
     }
-
-    .site-nav ul {
-        margin-top: 20px;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .site-nav li {
-        margin-left: 0;
-    }
-
-    .features-section {
-        gap: 20px;
+    .hero-subtitle {
+        font-size: 1rem;
     }
 }

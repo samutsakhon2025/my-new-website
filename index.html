@@ -3,60 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เว็บไซต์ของฉัน | My Website</title>
-    <!-- Link to Google Fonts -->
+    <title>Esports World Cup</title>
+    <!-- Link to Google Fonts for a modern look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Link to our CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="site-header">
-        <div class="container">
-            <h1 class="site-title">My Awesome Website</h1>
-            <nav class="site-nav">
-                <ul>
-                    <li><a href="#">หน้าแรก</a></li>
-                    <li><a href="#">เกี่ยวกับเรา</a></li>
-                    <li><a href="#">บริการ</a></li>
-                    <li><a href="#">ติดต่อ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Hero Section with Video Background -->
+    <section class="hero-section">
+        
+        <!-- The Video -->
+        <video autoplay loop muted playsinline class="hero-video-bg">
+            <!-- ชื่อไฟล์วิดีโอของคุณคือ background-video.mp4 -->
+            <source src="background-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-    <main class="site-main">
-        <div class="container">
-            <section class="hero-section">
-                <h2>ยินดีต้อนรับสู่เว็บไซต์ของเรา!</h2>
-                <p>ที่นี่คือพื้นที่สำหรับแบ่งปันความรู้และสร้างสรรค์ผลงานใหม่ๆ</p>
-                <button id="cta-button" class="cta-button">เรียนรู้เพิ่มเติม</button>
-            </section>
-
-            <section class="features-section">
-                <div class="feature-item">
-                    <h3>สร้างสรรค์</h3>
-                    <p>ปลดปล่อยจินตนาการและสร้างผลงานที่ไม่เหมือนใคร</p>
-                </div>
-                <div class="feature-item">
-                    <h3>เรียนรู้</h3>
-                    <p>พัฒนาทักษะใหม่ๆ และเติบโตไปพร้อมกับเรา</p>
-                </div>
-                <div class="feature-item">
-                    <h3>แบ่งปัน</h3>
-                    <p>ส่งต่อแรงบันดาลใจและเชื่อมต่อกับผู้คน</p>
-                </div>
-            </section>
+        <!-- The Content Overlay -->
+        <div class="hero-content">
+            <h1 class="hero-title">THE ESPORTS WORLD CUP</h1>
+            <p class="hero-subtitle">JULY 3 - AUGUST 25, 2024 | RIYADH</p>
+            <a href="#" class="hero-button">BUY TICKETS</a>
         </div>
-    </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>© 2024 Your Name. All Rights Reserved.</p>
-        </div>
-    </footer>
+    </section>
 
     <!-- Link to our JavaScript file -->
     <script src="script.js"></script>

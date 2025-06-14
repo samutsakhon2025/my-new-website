@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    // หาปุ่ม Call-to-Action ของเรา
-    const ctaButton = document.getElementById('cta-button');
+    const heroContent = document.querySelector('.hero-content');
 
-    // ตรวจสอบว่าหาปุ่มเจหรือไม่
-    if (ctaButton) {
-        // เพิ่ม Event Listener เมื่อมีการคลิกที่ปุ่ม
-        ctaButton.addEventListener('click', function() {
-            alert('ขอบคุณที่สนใจ! เว็บไซต์นี้กำลังอยู่ในระหว่างการพัฒนาครับ');
-        });
-    }
+    // Add a small delay for the animation to be noticeable
+    setTimeout(() => {
+        if (heroContent) {
+            heroContent.classList.add('visible');
+        }
+    }, 200); // 200 milliseconds delay
 
 });
