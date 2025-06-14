@@ -1,0 +1,151 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #007bff; /* สีหลักของเว็บ (สีน้ำเงิน) */
+    --secondary-color: #f8f9fa; /* สีพื้นหลังรอง (สีเทาอ่อน) */
+    --text-color: #333; /* สีตัวอักษรหลัก */
+    --light-text-color: #fdfdfd; /* สีตัวอักษรบนพื้นหลังเข้ม */
+    --border-radius: 8px; /* ความโค้งของขอบ */
+}
+
+body {
+    font-family: 'Sarabun', sans-serif; /* ใช้ฟอนต์ Sarabun จาก Google Fonts */
+    margin: 0;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header & Navigation --- */
+.site-header {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.site-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.site-nav li {
+    margin-left: 20px;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.site-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Main Content --- */
+.site-main {
+    padding: 40px 0;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 40px;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* สีหลักเข้มขึ้น */
+}
+
+/* --- Features Section --- */
+.features-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* ระยะห่างระหว่างกล่อง */
+}
+
+.feature-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 25px;
+    text-align: center;
+    flex-basis: 30%; /* กำหนดความกว้างพื้นฐานของแต่ละกล่อง */
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.feature-item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: #333;
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* --- Responsive for Mobile --- */
+@media (max-width: 768px) {
+    .site-header .container, .features-section {
+        flex-direction: column; /* เปลี่ยนการจัดวางเป็นแนวตั้ง */
+        text-align: center;
+    }
+
+    .site-nav ul {
+        margin-top: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .site-nav li {
+        margin-left: 0;
+    }
+
+    .features-section {
+        gap: 20px;
+    }
+}
